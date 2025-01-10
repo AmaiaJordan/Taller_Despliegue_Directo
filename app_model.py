@@ -16,8 +16,69 @@ app.config['DEBUG'] = True
 
 @app.route('/', methods=['GET'])
 def hello(): # Ligado al endopoint "/" o sea el home, con el método GET
-    return "Bienvenido a mi genial API del modelo advertising que inventé yo cuando tenía 5 años"
-
+    #return "Bienvenido a mi genial API del modelo advertising que inventé yo cuando tenía 5 años"
+    return '''
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Revenue Prediction Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #5a67d8;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #5a67d8;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #434190;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Revenue Prediction Model</h1>
+        <p>
+            This platform allows you to predict your revenue based on your marketing investment.
+            Simply provide the necessary input data and let our model analyze and generate
+            accurate predictions to optimize your strategy.
+        </p>
+        <p>
+            Ready to get started? Click the button below to explore our prediction tools.
+        </p>
+        <a href="/predict" class="btn">Get Started</a>
+    </div>
+</body>
+</html>
+'''
 # Enruta la funcion al endpoint /api/v1/predict
 @app.route('/api/v1/predict', methods= ['GET'])
 def predict(): # Ligado al endpoint '/api/v1/predict', con el método GET
